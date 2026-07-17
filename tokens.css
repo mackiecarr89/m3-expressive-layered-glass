@@ -1,0 +1,120 @@
+:root {
+  /* Reference-driven palette (purple / peach / cyan on deep surface) */
+  --ref-purple: #6b2d9e;
+  --ref-purple-glow: #9b5de5;
+  --ref-peach: #ff9a76;
+  --ref-peach-deep: #ff6b4a;
+  --ref-cyan: #00c9b7;
+  --ref-teal: #007f8f;
+  --ref-blend-magenta: #c44dff;
+  --ref-surface: #0a0a0c;
+  --ref-surface-container: #14141a;
+  --ref-surface-container-high: #1e1e28;
+  --ref-on-surface: #f3eff7;
+  --ref-on-surface-variant: #b8b0c4;
+
+  /* M3 sys color mapping */
+  --md-sys-color-primary: var(--ref-purple-glow);
+  --md-sys-color-on-primary: #1a0033;
+  --md-sys-color-primary-container: #3d1a5c;
+  --md-sys-color-on-primary-container: #f0d8ff;
+  --md-sys-color-secondary: var(--ref-peach);
+  --md-sys-color-on-secondary: #3d1200;
+  --md-sys-color-secondary-container: #5c2a18;
+  --md-sys-color-on-secondary-container: #ffddd0;
+  --md-sys-color-tertiary: var(--ref-cyan);
+  --md-sys-color-on-tertiary: #00332e;
+  --md-sys-color-tertiary-container: #004d45;
+  --md-sys-color-on-tertiary-container: #a8fff4;
+  --md-sys-color-surface: var(--ref-surface);
+  --md-sys-color-surface-container: var(--ref-surface-container);
+  --md-sys-color-surface-container-high: var(--ref-surface-container-high);
+  --md-sys-color-surface-container-highest: #2a2a36;
+  --md-sys-color-on-surface: var(--ref-on-surface);
+  --md-sys-color-on-surface-variant: var(--ref-on-surface-variant);
+  --md-sys-color-outline: #5c5470;
+  --md-sys-color-outline-variant: #3d3848;
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+
+  /* Expressive shape */
+  --md-sys-shape-corner-none: 0;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 24px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* Motion springs (M3 expressive) */
+  --motion-spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-spring-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-duration-short: 200ms;
+  --motion-duration-medium: 350ms;
+
+  /* Elevation / glass */
+  --glass-blur: 24px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.12);
+  --shadow-elev-1: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-elev-2: 0 8px 24px rgba(107, 45, 158, 0.25), 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-fab: 0 6px 20px rgba(155, 93, 229, 0.45);
+
+  /* Typography — Roboto Flex axes */
+  --font-family: "Roboto Flex", system-ui, sans-serif;
+  --font-variation: "wdth" 100, "wght" 450;
+
+  --display-large-size: clamp(2.5rem, 4vw, 3.5rem);
+  --display-large-weight: 650;
+  --headline-large-size: 2rem;
+  --headline-small-size: 1.5rem;
+  --title-large-size: 1.375rem;
+  --title-medium-size: 1rem;
+  --body-large-size: 1.125rem;
+  --body-medium-size: 0.9375rem;
+  --label-large-size: 0.875rem;
+  --label-small-size: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-variation-settings: var(--font-variation);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Type scale utilities */
+.display-large { font-size: var(--display-large-size); font-weight: var(--display-large-weight); letter-spacing: -0.02em; line-height: 1.1; margin: 0; }
+.display-medium { font-size: 2.75rem; font-weight: 600; margin: 0; }
+.display-small { font-size: 2.25rem; font-weight: 600; margin: 0; }
+.headline-large { font-size: var(--headline-large-size); font-weight: 600; margin: 0 0 0.5rem; }
+.headline-small { font-size: var(--headline-small-size); font-weight: 600; margin: 0 0 0.25rem; }
+.headline-medium { font-size: 1.75rem; font-weight: 600; margin: 0; }
+.title-large { font-size: var(--title-large-size); font-weight: 500; margin: 0; }
+.title-medium { font-size: var(--title-medium-size); font-weight: 500; margin: 0; }
+.body-large { font-size: var(--body-large-size); margin: 0; }
+.body-medium { font-size: var(--body-medium-size); margin: 0; }
+.body-small { font-size: 0.8125rem; margin: 0; }
+.label-large { font-size: var(--label-large-size); font-weight: 500; letter-spacing: 0.02em; }
+.label-medium { font-size: 0.8125rem; font-weight: 500; }
+.label-small { font-size: var(--label-small-size); font-weight: 500; letter-spacing: 0.04em; }
+.text-on-surface-variant { color: var(--md-sys-color-on-surface-variant); }
+.text-tertiary { color: var(--md-sys-color-tertiary); }
+
+code.label-small {
+  display: block;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.5rem;
+  background: var(--md-sys-color-surface-container-highest);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: ui-monospace, monospace;
+}
